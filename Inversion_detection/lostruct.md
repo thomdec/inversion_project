@@ -49,8 +49,28 @@ done < Dchry2.2_contigs.txt
 Rscript lostruct_1k_5mds.R $indexed_bcf_input $output
 ```
 
-Visualise the results
+Visualise the results in R
 
 ```
-XXXXXXXXX
+library(here)
+library(ggplot2)
+library(dplyr)
+library(reshape2)
+
+contigs <- read.csv(here("data/Dchry2.2_contigs.txt"), header = FALSE) #file with the name of each contigs
+
+for(i in 1:nrow(contigs)){
+  cont <- contigs$V1[i]
+
+  mds.data <- read.csv(here(paste("data/lostruct_1k/", cont, "_local_pca.csv", sep = "")))
+
+  print(ggplot(mds.data, aes(x = mid/1e6, y=mds01)) +
+    geom_point(alpha=0.7, size=2) +
+    theme_bw() +
+    xlab("Position (Mb)") +
+    theme(panel.grid = element_blank(),
+          legend.position="none",
+          strip.text = element_text(size=20)))
+  
+}
 ```

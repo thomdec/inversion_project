@@ -24,11 +24,6 @@ RENAME=ragtag_conversion.txt #A tab-delimited file containing the names of the c
 python rename_scaffolds.py $INPUT_GENOME $RENAME $MIN_SIZE $OUTPUT_GENOME
 ```
 
-XXXXXXXXX
-
-Rscript to write the RENAME file
-
-
 ## Creation of the alignment
 
 ```

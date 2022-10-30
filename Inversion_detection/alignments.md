@@ -18,12 +18,6 @@ minimap2 -x asm10 Dchry2.2.fa Dchry2.haplotigs.fasta | gzip > Dchry2.2_Dchry2.HA
 minimap2 -x asm20 Dchry2.2.fa DplexMex.fa | gzip > Dchry2.2_DplexMex_minimap2.asm20.paf.gz
 ```
 
-#### Dchry2.2_Dplex4
-
-```
-
-```
-
 ## Make the fai files for each fasta (this is required for asynt.R)
 
 Use the samtools command `samtools faidx <fasta_file.fasta>`
